@@ -1,0 +1,6 @@
+{
+  "name": "SmartRuleBot",
+  "description": "A rule-based intelligent chatbot showcasing natural language processing, pattern matching, custom workflows, and detailed chat analytics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
