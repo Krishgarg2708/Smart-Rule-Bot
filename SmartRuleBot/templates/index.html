@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SmartRuleBot - Intelligent Rule-Based Chatbot</title>
+    <!-- Inter Font and JetBrains Mono -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation & Statistics Section -->
+        <aside class="sidebar">
+            <h2 class="sidebar-title">
+                <span style="font-size: 24px;">🤖</span> SmartRuleBot
+            </h2>
+            
+            <p style="font-size: 13px; color: #9ca3af; margin-bottom: 20px; line-height: 1.5;">
+                An intelligent rule-based agent built using native python string matching, standard expressions (regex), and NLP preprocessing pipelines.
+            </p>
+
+            <div class="sidebar-subtitle">Analytics Statistics</div>
+            <div class="stats-card">
+                <div class="stats-row">
+                    <span>Total Triggers</span>
+                    <span id="total-messages-val" class="stats-val">0</span>
+                </div>
+                <div class="stats-row">
+                    <span>User Entries</span>
+                    <span id="user-messages-val" class="stats-val">0</span>
+                </div>
+                <div class="stats-row">
+                    <span>Bot Queries</span>
+                    <span id="bot-messages-val" class="stats-val">0</span>
+                </div>
+            </div>
+
+            <div class="sidebar-subtitle">Control Panel</div>
+            <button id="clear-btn" class="sidebar-btn btn-danger">🗑️ Clear Chat History</button>
+            <button id="export-btn" class="sidebar-btn">💾 Export Chat Transcript</button>
+            <button id="theme-toggle" class="sidebar-btn">🌓 Dark Mode Toggle</button>
+
+            <!-- Copyright footer -->
+            <div style="margin-top: auto; font-size: 11px; color: #4b5563; text-align: center;">
+                Academic Mini-Project Submission
+            </div>
+        </aside>
+
+        <!-- Main Chat Panel Section -->
+        <main class="chat-area">
+            <!-- App Header Title and Status Indicator -->
+            <header class="header">
+                <div class="bot-info">
+                    <div class="bot-avatar">SR</div>
+                    <div class="bot-text-details">
+                        <h1>SmartRuleBot v1.0.0</h1>
+                        <span class="presence">Active System</span>
+                    </div>
+                </div>
+                <div style="font-size: 13px; color: var(--text-secondary); filter: grayscale(1);">
+                    NLP Pattern Matching Enabled
+                </div>
+            </header>
+
+            <!-- Chat Message log list -->
+            <div id="chat-window" class="chat-window">
+                <!-- Message structures are generated here programmatically -->
+                
+                <!-- Typing bubble model -->
+                <div id="typing-indicator" class="typing-bubble">
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span style="font-size: 12px; margin-left: 6px;">Bot is analyzing...</span>
+                </div>
+            </div>
+
+            <!-- Chat Box Input Bar Container -->
+            <div class="input-tray">
+                <input type="text" id="message-input" class="message-input" placeholder="Type a message (e.g. 'What can you do?' 'BTech explained', etc.)" autofocus autocomplete="off">
+                <button id="send-btn" class="send-btn">➔</button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Main Controller Scripts -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
