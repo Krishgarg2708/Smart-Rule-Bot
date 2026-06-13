@@ -1,0 +1,72 @@
+{
+  "greeting": {
+    "responses": [
+      "Hello! How can I help you today?",
+      "Hi there! Nice to meet you.",
+      "Greetings! What can I do for you today?"
+    ]
+  },
+  "goodbye": {
+    "responses": [
+      "Goodbye! Have a great day.",
+      "See you again. Take care!",
+      "Farewell! Feel free to chat anytime."
+    ]
+  },
+  "thanks": {
+    "responses": [
+      "You're welcome!",
+      "Happy to help.",
+      "Anytime! Let me know if you need anything else."
+    ]
+  },
+  "time": {
+    "responses": []
+  },
+  "date": {
+    "responses": []
+  },
+  "name": {
+    "responses": [
+      "I am SmartRuleBot, your virtual educational assistant.",
+      "You can call me SmartRuleBot. I process queries using rule-based NLP!"
+    ]
+  },
+  "help": {
+    "responses": [
+      "I can help you with multiple queries! Try asking about: greeting, goodbye, thanks, time, date, name, help, weather, BTech / engineering, motivation, or jokes!"
+    ]
+  },
+  "weather": {
+    "responses": [
+      "Weather API is not connected yet."
+    ]
+  },
+  "education": {
+    "responses": [
+      "BTech (Bachelor of Technology) is a professional undergraduate engineering degree. Engineering is the dynamic application of science, mathematics, and logic to build creative solutions for real-world problems."
+    ]
+  },
+  "motivation": {
+    "responses": [
+      "Believe you can and you're halfway there! - Theodore Roosevelt",
+      "The only way to do great work is to love what you do. - Steve Jobs",
+      "Don't worry if it doesn't work right. If everything did, you'd be out of a job. - Mosher's Law",
+      "Focus on being productive instead of busy. Keep moving forward!"
+    ]
+  },
+  "joke": {
+    "responses": [
+      "Why do programmers wear glasses? Because they don't C#!",
+      "How many programmers does it take to change a lightbulb? None, that is a hardware issue!",
+      "Why did the developer go broke? Because they cleaned out all their cache!"
+    ]
+  },
+  "unknown": {
+    "responses": [
+      "Sorry, I didn't understand that.",
+      "Can you rephrase your question?",
+      "I couldn't match that to any of my predefined processing rules. Try typing 'help' to see what I can do!"
+    ]
+  }
+}
