@@ -1,0 +1,370 @@
+/* SmartRuleBot Custom Stylesheet */
+:root {
+    --bg-primary: #f9fafb;
+    --bg-secondary: #ffffff;
+    --sidebar-bg: #111827;
+    --sidebar-text: #f3f4f6;
+    --text-primary: #111827;
+    --text-secondary: #4b5563;
+    --border-color: #e5e7eb;
+    --accent-color: #2563eb;
+    --accent-hover: #1d4ed8;
+    --chat-bubble-user: #2563eb;
+    --chat-bubble-user-text: #ffffff;
+    --chat-bubble-bot: #f3f4f6;
+    --chat-bubble-bot-text: #1f2937;
+    --status-indicator: #10b981;
+}
+
+[data-theme="dark"] {
+    --bg-primary: #1f2937;
+    --bg-secondary: #111827;
+    --sidebar-bg: #030712;
+    --sidebar-text: #e5e7eb;
+    --text-primary: #f9fafb;
+    --text-secondary: #9ca3af;
+    --border-color: #374151;
+    --chat-bubble-user: #3b82f6;
+    --chat-bubble-user-text: #ffffff;
+    --chat-bubble-bot: #374151;
+    --chat-bubble-bot-text: #f3f4f6;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    height: 100vh;
+    display: flex;
+    overflow: hidden;
+}
+
+/* App Container Layout */
+.app-container {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 300px;
+    background-color: var(--sidebar-bg);
+    color: var(--sidebar-text);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-right: 1px solid var(--border-color);
+    z-index: 10;
+}
+
+.sidebar-title {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 24px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--sidebar-text);
+}
+
+.sidebar-subtitle {
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #6b7280;
+    margin-top: 16px;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.stats-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.stats-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+.stats-row:last-child {
+    margin-bottom: 0;
+}
+
+.stats-val {
+    font-weight: 600;
+    color: var(--accent-color);
+}
+
+.sidebar-btn {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background: rgba(255, 255, 255, 0.08);
+    color: var(--sidebar-text);
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    text-align: center;
+}
+
+.sidebar-btn:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.btn-danger {
+    background: #ef4444 !important;
+    color: white !important;
+}
+
+.btn-danger:hover {
+    background: #dc2626 !important;
+}
+
+/* Theme Toggle Slider */
+.theme-switch-container {
+    margin-top: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 16px;
+    border-top: 1px solid #374151;
+}
+
+/* Chat Screen Main Area */
+.chat-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-primary);
+    position: relative;
+}
+
+/* Header Styling */
+.header {
+    background-color: var(--bg-secondary);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 70px;
+}
+
+.bot-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.bot-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--accent-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.bot-text-details h1 {
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.presence {
+    font-size: 12px;
+    color: var(--text-secondary);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.presence::before {
+    content: "";
+    display: inline-block;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--status-indicator);
+}
+
+/* Chat Dialog Window */
+.chat-window {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    scroll-behavior: smooth;
+}
+
+/* Chat Bubbles */
+.message-wrapper {
+    display: flex;
+    width: 100%;
+}
+
+.user-message {
+    justify-content: flex-end;
+}
+
+.bot-message {
+    justify-content: flex-start;
+}
+
+.bubble {
+    max-width: 70%;
+    padding: 12px 18px;
+    border-radius: 18px;
+    font-size: 15px;
+    line-height: 1.5;
+    position: relative;
+    word-break: break-word;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+.user-message .bubble {
+    background-color: var(--chat-bubble-user);
+    color: var(--chat-bubble-user-text);
+    border-bottom-right-radius: 4px;
+}
+
+.bot-message .bubble {
+    background-color: var(--chat-bubble-bot);
+    color: var(--chat-bubble-bot-text);
+    border-bottom-left-radius: 4px;
+}
+
+.time-stamp {
+    font-size: 10px;
+    opacity: 0.6;
+    margin-top: 4px;
+    display: block;
+    text-align: right;
+}
+
+/* Custom Telemetry Box under bot messages for Rule Inspection */
+.telemetry {
+    font-size: 11px;
+    font-family: 'JetBrains Mono', Courier, monospace;
+    background: rgba(0,0,0,0.07);
+    color: var(--text-secondary);
+    padding: 4px 8px;
+    border-radius: 4px;
+    margin-top: 6px;
+    display: block;
+}
+
+[data-theme="dark"] .telemetry {
+    background: rgba(255,255,255,0.08);
+}
+
+/* Typing Indicator Animation */
+.typing-bubble {
+    display: none;
+    align-items: center;
+    gap: 4px;
+    padding: 12px 18px;
+    border-radius: 18px;
+    background-color: var(--chat-bubble-bot);
+    color: var(--text-secondary);
+    width: fit-content;
+}
+
+.dot {
+    width: 6px;
+    height: 6px;
+    background: var(--text-secondary);
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+}
+
+.dot:nth-child(1) { animation-delay: -0.32s; }
+.dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
+}
+
+/* Input Form Tray */
+.input-tray {
+    padding: 16px 24px;
+    background-color: var(--bg-secondary);
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    gap: 12px;
+}
+
+.message-input {
+    flex: 1;
+    border-radius: 24px;
+    border: 1px solid var(--border-color);
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 12px 20px;
+    font-size: 15px;
+    outline: none;
+}
+
+.message-input:focus {
+    border-color: var(--accent-color);
+}
+
+.send-btn {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--accent-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    outline: none;
+}
+
+.send-btn:hover {
+    background-color: var(--accent-hover);
+}
+
+/* Utility bar for narrow displays */
+.mobile-topbar {
+    display: none;
+}
+
+/* RESPONSIVE LAYOUT */
+@media (max-width: 768px) {
+    .sidebar {
+        display: none; /* Hide sidebar on mobile by default to show clean chatbot layout */
+    }
+    
+    body {
+        flex-direction: column;
+    }
+}
